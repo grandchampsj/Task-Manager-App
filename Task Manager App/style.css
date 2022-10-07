@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    align-items: center;
+    font-family: Roboto, sans-serif;
+   /* display: flex;
+    flex-direction: rows;*/
+    justify-content: center;
+    width: 100vw;
+    margin: 0;
+    overflow: hidden;
+}
