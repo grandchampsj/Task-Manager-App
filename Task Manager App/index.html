@@ -1,35 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" />
-    <title>GetIT DONE</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GetIT DONE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-    <div class="title">
-        <h1>GetIT DONE</h1>
-        <h2><i>WELCOME USER!</i></h2>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href=""><h1 class="logo"><i>GetIT DONE</i></h1></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#createNewTask">Create New task</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#taskList">All Task</a>
+        </li>
+      </ul>
     </div>
+  </nav> 
+  <!--Word logo on top and welcome message -->
+  <div class="title-container col-sm-12">
+    <h3><i>WELCOME {USER}!</i></h3>
+  </div>
+  
 
-    <div right-container>
-        <form>
-            <label for="name">Name</label><br>
-            <input type="text" id="name" name="fname" placeholder="Name"><br>
-            <label for="description">Description</label><br>
-            <textarea type="text" id="description" rows="5" columns="10" placeholder="What would you like to add on your to-do list?"></textarea><br>
-            <label for="assignedTo">Assigned To</label><br>
-            <input type="text" id="name" name="fname" placeholder="Name"><br>
-            
-            <input type="submit" value="Submit">
-        </form>
+  <!--two sided box: left container create new task, right container list of assigned task  "container d-flex justify-content-between"-->
+  <div class="box">
 
+    <div class="left-container" id="createNewTask">
+
+      <form>
+        <h4>Create a New Task</h4><br>
+
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="fname" placeholder="Name" /><br>
+        <br>
+        <label for="description">Description</label><br>
+        <textarea type="text" id="description" placeholder="What would you like to add on your to-do list?"></textarea><br>
+        <br>
+        <div class="widget">
+          <label for="assignedTo">Assigned To</label><br>
+          <select name="users" multiple="multiple">
+            <option value="abdelrahman">AbdelRahman A.</option>
+            <option value="daniel">Daniel T.</option>
+            <option value="jaden">Jaden B.</option>
+            <option value="jennifer">Jennifer G.</option>
+            <option value="mlaw">Mlaw G.</option>
+            <option value="ritu">Ritu J.</option>
+          </select>
+          <br>
+          <input type="text" id="assignee" placeholder="New Hire? Type it in.">
+          <input type="submit" value="Add"><br>
+          <br>
+          <label for="duedate">Due date</label><br>
+          <input type="date" name="taskdue">
+          <input type="submit" value="select">
+          <br>
+          <div class="todocheck">
+            <input type="radio" value="to-do"><br>
+            <label for="to-do">To-Do</label><br>
+            <input type="radio" value="done"><br>
+            <label for="done">Done</label><br>
+          </div>
+          <br>
+          <button><img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M19%2C11H13V5a1%2C1%2C0%2C0%2C0-2%2C0v6H5a1%2C1%2C0%2C0%2C0%2C0%2C2h6v6a1%2C1%2C0%2C0%2C0%2C2%2C0V13h6a1%2C1%2C0%2C0%2C0%2C0-2Z%22%2F%3E%3C%2Fsvg%3E" height="25px"> Create</button><br>
+          <br>
+        </div>  
+      </form>
+      
     </div>
-    <div class="left-container">
-        
-
+    <br />
+    <div class="right-container" id="tasks">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">Task</h6>
+          <input class="check" type="checkbox" value="Completed">
+          <p class="card-text">Your task appear here - create one to display</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">Task</h6>
+          <input class="check" type="checkbox" value="Completed">
+          <p class="card-text">Your task appear here - create one to display</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">Task</h6>
+          <input class="check" type="checkbox" value="Completed">
+          <p class="card-text">Your task appear here - create one to display</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h6 class="card-title">Task</h6>
+          <input class="check" type="checkbox" value="Completed">
+          <p class="card-text">Your task appear here - create one to display</p>
+        </div>
+      </div>
     </div>
-   
-    <script src="script.js"></script>
+    <form id="form">
+      <br />
+    </form>
+  </div>
+    <input class="center" type="search" id="query" name="q" placeholder="Find task..." />
+    <button class="center">Go!</button><br /><br />
+
+    <script src="./js/script.js"></script>
 </body>
+
 </html>
